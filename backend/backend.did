@@ -1,0 +1,13 @@
+type TranslationEntry = 
+ record {
+   original: text;
+   targetLanguage: text;
+   translated: text;
+ };
+service : {
+  addTranslation: (text, TranslationEntry) -> ();
+  clearHistory: () -> ();
+  getHistorySize: () -> (nat) query;
+  getTranslations: () -> (vec TranslationEntry) query;
+  init: () -> ();
+}
